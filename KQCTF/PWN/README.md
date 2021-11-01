@@ -100,8 +100,4 @@ int __cdecl main(int argc, const char **argv, const char **envp)
 .text:00000000000012A6 main            endp
 ```
 
-## Checksec
-![image](https://user-images.githubusercontent.com/69805864/139613530-4cfdc6f0-7f57-4b66-a883-32751ccf214c.png)
-
-
 ## Methodology
