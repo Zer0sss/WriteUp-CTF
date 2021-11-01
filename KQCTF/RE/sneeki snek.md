@@ -1,7 +1,7 @@
 # Challenge name: sneeki snek
 
 
-## Code
+## sneekisenk.txt
 ```
   4           0 LOAD_CONST               1 ('')
               2 STORE_FAST               0 (f)
