@@ -102,7 +102,6 @@ int __cdecl main(int argc, const char **argv, const char **envp)
 
 ## Methodology
 Có thể thấy có 1 câu lệnh if kiểm tra điều kiện và in ra flag. Điều kiện để in ra được flag là "v5 = 1337", mà v5 lại được gán bằng 0 ở đầu hàm. Nên ta nghĩ ngay đến việc thay đổi biến v5 này. 
-
 Có thể thấy s được khai báo chỉ có 44 nhưng khi dùng hàm gets nhập lại có thể nhập được 64 nên có khai thác tại đây.\n
 Dựa vào mã assembly trên thì có thể thấy stack:
 
