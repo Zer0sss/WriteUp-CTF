@@ -1,7 +1,7 @@
 # Challenge: sneeki snek 2 oh no what did i do
 
 
-## Code
+## sneekisnek2.txt
 ```
   4           0 BUILD_LIST               0
               2 STORE_FAST               0 (a)
